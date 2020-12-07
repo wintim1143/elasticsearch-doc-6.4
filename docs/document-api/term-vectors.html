@@ -1,0 +1,1479 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Term Vectors · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="multi-termverctors-api.html" />
+    
+    
+    <link rel="prev" href="reindex-api.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting-started/">
+            
+                <a href="../getting-started/">
+            
+                    
+                    入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../getting-started/basic-concept.html">
+            
+                <a href="../getting-started/basic-concept.html">
+            
+                    
+                    基础概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../getting-started/installation.html">
+            
+                <a href="../getting-started/installation.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../getting-started/exploring-your-cluster/exploring-your-cluster.html">
+            
+                <a href="../getting-started/exploring-your-cluster/exploring-your-cluster.html">
+            
+                    
+                    集群探索
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../set-up-elasticsearc/">
+            
+                <a href="../set-up-elasticsearc/">
+            
+                    
+                    建立ELASTICSEARCH
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../set-up-elasticsearc/x-pack-setting/">
+            
+                <a href="../set-up-elasticsearc/x-pack-setting/">
+            
+                    
+                    X-PACK设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../set-up-elasticsearc/x-pack-setting/sql-access-setting.html">
+            
+                <a href="../set-up-elasticsearc/x-pack-setting/sql-access-setting.html">
+            
+                    
+                    SQL访问设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    文档API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="reading-and-writing-documents.html">
+            
+                <a href="reading-and-writing-documents.html">
+            
+                    
+                    读取和写入文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="index-api.html">
+            
+                <a href="index-api.html">
+            
+                    
+                    索引API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="get-api.html">
+            
+                <a href="get-api.html">
+            
+                    
+                    GET API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="delete-api.html">
+            
+                <a href="delete-api.html">
+            
+                    
+                    DELETE API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="delete-by-query-api.html">
+            
+                <a href="delete-by-query-api.html">
+            
+                    
+                    Delete by Query API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="update-api.html">
+            
+                <a href="update-api.html">
+            
+                    
+                    Update API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="update-by-query-api.html">
+            
+                <a href="update-by-query-api.html">
+            
+                    
+                    Update by Query API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="multi-get-api.html">
+            
+                <a href="multi-get-api.html">
+            
+                    
+                    Multi GET API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="bulk-api.html">
+            
+                <a href="bulk-api.html">
+            
+                    
+                    Bulk API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="reindex-api.html">
+            
+                <a href="reindex-api.html">
+            
+                    
+                    Reindex API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.11" data-path="term-vectors.html">
+            
+                <a href="term-vectors.html">
+            
+                    
+                    Term Vectors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="multi-termverctors-api.html">
+            
+                <a href="multi-termverctors-api.html">
+            
+                    
+                    Multi termvectors API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="refresh.html">
+            
+                <a href="refresh.html">
+            
+                    
+                    ？更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../sql-access/">
+            
+                <a href="../sql-access/">
+            
+                    
+                    SQL访问
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../sql-access/overview.html">
+            
+                <a href="../sql-access/overview.html">
+            
+                    
+                    概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../sql-access/getting-started-with-sql.html">
+            
+                <a href="../sql-access/getting-started-with-sql.html">
+            
+                    
+                    SQL入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../sql-access/convertions-and-terminology/">
+            
+                <a href="../sql-access/convertions-and-terminology/">
+            
+                    
+                    公约和术语
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../sql-access/convertions-and-terminology/Mapping-concepts-across-sql-and-elasticsearch.html">
+            
+                <a href="../sql-access/convertions-and-terminology/Mapping-concepts-across-sql-and-elasticsearch.html">
+            
+                    
+                    跨SQL和Elasticsearch映射概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../sql-access/security.html">
+            
+                <a href="../sql-access/security.html">
+            
+                    
+                    安全性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../sql-access/sql-rest-api.html">
+            
+                <a href="../sql-access/sql-rest-api.html">
+            
+                    
+                    SQL REST API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../sql-access/sql-translate-api.html">
+            
+                <a href="../sql-access/sql-translate-api.html">
+            
+                    
+                    SQL 翻译API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../sql-access/sql-cli.html">
+            
+                <a href="../sql-access/sql-cli.html">
+            
+                    
+                    SQL CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../sql-access/sql-jdbc/">
+            
+                <a href="../sql-access/sql-jdbc/">
+            
+                    
+                    SQL JDBC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.8.1" data-path="../sql-access/sql-jdbc/api-usage.html">
+            
+                <a href="../sql-access/sql-jdbc/api-usage.html">
+            
+                    
+                    API用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../sql-access/sql-language.html">
+            
+                <a href="../sql-access/sql-language.html">
+            
+                    
+                    SQL 语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../sql-access/data-types.html">
+            
+                <a href="../sql-access/data-types.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../sql-access/sql-commands/">
+            
+                <a href="../sql-access/sql-commands/">
+            
+                    
+                    SQL命令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.11.1" data-path="../sql-access/sql-commands/describe-tables.html">
+            
+                <a href="../sql-access/sql-commands/describe-tables.html">
+            
+                    
+                    describe table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11.2" data-path="../sql-access/sql-commands/select.html">
+            
+                <a href="../sql-access/sql-commands/select.html">
+            
+                    
+                    select
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11.3" data-path="../sql-access/sql-commands/show-columns.html">
+            
+                <a href="../sql-access/sql-commands/show-columns.html">
+            
+                    
+                    show columns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11.4" data-path="../sql-access/sql-commands/show-functions.html">
+            
+                <a href="../sql-access/sql-commands/show-functions.html">
+            
+                    
+                    show functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11.5" data-path="../sql-access/sql-commands/show-tables.html">
+            
+                <a href="../sql-access/sql-commands/show-tables.html">
+            
+                    
+                    show tables
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../sql-access/functions-and-operators/">
+            
+                <a href="../sql-access/functions-and-operators/">
+            
+                    
+                    方程和运算
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.12.1" data-path="../sql-access/functions-and-operators/comparsion-operators.html">
+            
+                <a href="../sql-access/functions-and-operators/comparsion-operators.html">
+            
+                    
+                    比较运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.2" data-path="../sql-access/functions-and-operators/logical-operators.html">
+            
+                <a href="../sql-access/functions-and-operators/logical-operators.html">
+            
+                    
+                    逻辑运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.3" data-path="../sql-access/functions-and-operators/math-operators.html">
+            
+                <a href="../sql-access/functions-and-operators/math-operators.html">
+            
+                    
+                    数学运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.4" data-path="../sql-access/functions-and-operators/math-functions.html">
+            
+                <a href="../sql-access/functions-and-operators/math-functions.html">
+            
+                    
+                    数学方程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.5" data-path="../sql-access/functions-and-operators/date-and-time-functions.html">
+            
+                <a href="../sql-access/functions-and-operators/date-and-time-functions.html">
+            
+                    
+                    日期和时间方程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.6" data-path="../sql-access/functions-and-operators/aggregate-functions.html">
+            
+                <a href="../sql-access/functions-and-operators/aggregate-functions.html">
+            
+                    
+                    聚合方程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../sql-access/reversed-keywords.html">
+            
+                <a href="../sql-access/reversed-keywords.html">
+            
+                    
+                    保留关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../x-pack-api/">
+            
+                <a href="../x-pack-api/">
+            
+                    
+                    X-PACK API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../x-pack-api/security-api/">
+            
+                <a href="../x-pack-api/security-api/">
+            
+                    
+                    安全API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../x-pack-api/security-api/create-or-update-application-privileges-API.html">
+            
+                <a href="../x-pack-api/security-api/create-or-update-application-privileges-API.html">
+            
+                    
+                    创建或修改应用权限api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../x-pack-api/security-api/authenticate-api.html">
+            
+                <a href="../x-pack-api/security-api/authenticate-api.html">
+            
+                    
+                    认证api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../x-pack-api/security-api/change-passwords-api.html">
+            
+                <a href="../x-pack-api/security-api/change-passwords-api.html">
+            
+                    
+                    修改密码api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../x-pack-api/security-api/clear-cache-api.html">
+            
+                <a href="../x-pack-api/security-api/clear-cache-api.html">
+            
+                    
+                    清除缓存api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="../x-pack-api/security-api/create-or-update-role-mapping-api.html">
+            
+                <a href="../x-pack-api/security-api/create-or-update-role-mapping-api.html">
+            
+                    
+                    创建或修改角色映射api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="../x-pack-api/security-api/clear-role-cache-api.html">
+            
+                <a href="../x-pack-api/security-api/clear-role-cache-api.html">
+            
+                    
+                    清除角色缓存api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.7" data-path="../x-pack-api/security-api/create-or-update-roles-api.html">
+            
+                <a href="../x-pack-api/security-api/create-or-update-roles-api.html">
+            
+                    
+                    创建或修改角色api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.8" data-path="../x-pack-api/security-api/create-or-update-user-api.html">
+            
+                <a href="../x-pack-api/security-api/create-or-update-user-api.html">
+            
+                    
+                    创建或修改用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.9" data-path="../x-pack-api/security-api/delete-applications-privileges-api.html">
+            
+                <a href="../x-pack-api/security-api/delete-applications-privileges-api.html">
+            
+                    
+                    删除应用程序权限api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.10" data-path="../x-pack-api/security-api/delete-role-mapping-api.html">
+            
+                <a href="../x-pack-api/security-api/delete-role-mapping-api.html">
+            
+                    
+                    删除角色映射api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.11" data-path="../x-pack-api/security-api/delte-roles-api.html">
+            
+                <a href="../x-pack-api/security-api/delte-roles-api.html">
+            
+                    
+                    删除角色api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.12" data-path="../x-pack-api/security-api/delelte-token-api.html">
+            
+                <a href="../x-pack-api/security-api/delelte-token-api.html">
+            
+                    
+                    删除令牌api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.13" data-path="../x-pack-api/security-api/delete-user-api.html">
+            
+                <a href="../x-pack-api/security-api/delete-user-api.html">
+            
+                    
+                    删除用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.14" data-path="../x-pack-api/security-api/disable-user-api.html">
+            
+                <a href="../x-pack-api/security-api/disable-user-api.html">
+            
+                    
+                    禁用用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.15" data-path="../x-pack-api/security-api/enable-user-api.html">
+            
+                <a href="../x-pack-api/security-api/enable-user-api.html">
+            
+                    
+                    启用用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.16" data-path="../x-pack-api/security-api/get-application-privelges-api.html">
+            
+                <a href="../x-pack-api/security-api/get-application-privelges-api.html">
+            
+                    
+                    获取应用程序权限api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.17" data-path="../x-pack-api/security-api/get-roles-mapping-api.html">
+            
+                <a href="../x-pack-api/security-api/get-roles-mapping-api.html">
+            
+                    
+                    获取角色映射api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.18" data-path="../x-pack-api/security-api/get-roles-api.html">
+            
+                <a href="../x-pack-api/security-api/get-roles-api.html">
+            
+                    
+                    获取角色api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.19" data-path="../x-pack-api/security-api/get-token-api.html">
+            
+                <a href="../x-pack-api/security-api/get-token-api.html">
+            
+                    
+                    获取令牌api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.20" data-path="../x-pack-api/security-api/get-users-api.html">
+            
+                <a href="../x-pack-api/security-api/get-users-api.html">
+            
+                    
+                    获取用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.21" data-path="../x-pack-api/security-api/has-privileges-api.html">
+            
+                <a href="../x-pack-api/security-api/has-privileges-api.html">
+            
+                    
+                    是否有权限api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.22" data-path="../x-pack-api/security-api/ssl-certificate-api.html">
+            
+                <a href="../x-pack-api/security-api/ssl-certificate-api.html">
+            
+                    
+                    ssl证书api
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../expamle/">
+            
+                <a href="../expamle/">
+            
+                    
+                    示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../expamle/create-index.html">
+            
+                <a href="../expamle/create-index.html">
+            
+                    
+                    创建索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../expamle/create-role.html">
+            
+                <a href="../expamle/create-role.html">
+            
+                    
+                    创建角色
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../expamle/create-user.html">
+            
+                <a href="../expamle/create-user.html">
+            
+                    
+                    创建用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Term Vectors</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="term-vectors">Term Vectors</h1>
+<p>&#x8FD4;&#x56DE;&#x7279;&#x5B9A;&#x6587;&#x6863;&#x5B57;&#x6BB5;&#x4E2D;&#x8BCD;&#x9879;&#xFF08;term&#xFF09;&#x7684;&#x4FE1;&#x606F;&#x548C;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x3002; &#x8BE5;&#x6587;&#x6863;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5728;&#x7D22;&#x5F15;&#x4E2D;&#x6216;&#x7531;&#x7528;&#x6237;&#x4EBA;&#x5DE5;&#x63D0;&#x4F9B;&#x3002; &#x8BCD;&#x9879;&#x5411;&#x91CF;&#x9ED8;&#x8BA4;&#x662F;&#x5B9E;&#x65F6;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x63A5;&#x8FD1;&#x5B9E;&#x65F6;&#x7684;&#x3002; &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;<code>realtime</code>&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;false&#x6765;&#x66F4;&#x6539;&#x6B64;&#x8BBE;&#x7F6E;&#x3002;</p>
+<pre><code>GET /twitter/_doc/1/_termvectors
+</code></pre><p>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;url&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x8981;&#x4E3A;&#x5176;&#x68C0;&#x7D22;&#x4FE1;&#x606F;&#x7684;&#x5B57;&#x6BB5;</p>
+<pre><code>GET /twitter/_doc/1/_termvectors?fields=message
+</code></pre><p>&#x6216;&#x8005;&#x5728;&#x8BF7;&#x6C42;&#x6B63;&#x6587;&#x4E2D;&#x6DFB;&#x52A0;&#x8BF7;&#x6C42;&#x7684;&#x5B57;&#x6BB5;&#xFF08;&#x53C2;&#x89C1;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#xFF09;&#x3002; &#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x4EE5;&#x4E0E;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html" target="_blank">&#x591A;&#x5339;&#x914D;&#x67E5;&#x8BE2;</a>&#x7C7B;&#x4F3C;&#x7684;&#x65B9;&#x5F0F;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;</p>
+<p><strong>&#x8B66;&#x544A;&#xFF1A;</strong>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;/_termvector&#x7684;&#x4F7F;&#x7528;&#x5728;2.0&#x4E2D;&#x5DF2;&#x5F03;&#x7528;&#xFF0C;&#x5E76;&#x66FF;&#x6362;&#x4E3A;/_termvectors&#x3002;</p>
+<h3 id="&#x8FD4;&#x56DE;&#x503C;">&#x8FD4;&#x56DE;&#x503C;</h3>
+<p>&#x53EF;&#x4EE5;&#x8BF7;&#x6C42;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF1A;&#x8BCD;&#x9879;&#x4FE1;&#x606F;&#xFF08;<em>term information</em>&#xFF09;&#xFF0C;&#x8BCD;&#x9879;&#x7EDF;&#x8BA1;&#xFF08;<em>term statistics</em>&#xFF09;&#x548C;&#x5B57;&#x6BB5;&#x7EDF;&#x8BA1;&#xFF08;<em>field statistics</em>&#xFF09;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E3A;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x8BCD;&#x9879;&#x4FE1;&#x606F;&#xFF08;<em>term information</em>&#xFF09;&#x548C;&#x5B57;&#x6BB5;&#x7EDF;&#x8BA1;&#xFF08;<em>field statistics</em>&#xFF09;&#xFF0C;&#x4F46;&#x4E0D;&#x8FD4;&#x56DE;&#x8BCD;&#x9879;&#x4FE1;&#x606F;&#xFF08;<em>term information</em>&#xFF09;&#x3002;</p>
+<h4 id="&#x8BCD;&#x9879;&#x4FE1;&#x606F;&#xFF08;term-information&#xFF09;">&#x8BCD;&#x9879;&#x4FE1;&#x606F;&#xFF08;<em>term information</em>&#xFF09;</h4>
+<ul>
+<li>&#x5B57;&#x6BB5;&#x4E2D;&#x8BCD;&#x9879;&#x9891;&#x7387;&#xFF08;&#x4E00;&#x76F4;&#x8FD4;&#x56DE;&#xFF09;</li>
+<li>&#x8BCD;&#x9879;&#x4F4D;&#x7F6E;(<code>positions</code>: true)</li>
+<li>&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x504F;&#x79FB;(<code>offsets</code>: true)</li>
+<li>&#x8BCD;&#x9879;&#x8D1F;&#x8F7D;&#xFF08;payloads&#xFF1A;true&#xFF09;&#xFF0C;&#x4F5C;&#x4E3A;base64&#x7F16;&#x7801;&#x7684;&#x5B57;&#x8282;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x8BF7;&#x6C42;&#x7684;&#x4FE1;&#x606F;&#x672A;&#x5B58;&#x50A8;&#x5728;&#x7D22;&#x5F15;&#x4E2D;&#xFF0C;&#x5219;&#x5C06;&#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x901F;&#x8BA1;&#x7B97;&#x3002; &#x53E6;&#x5916;&#xFF0C;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x751A;&#x81F3;&#x4E0D;&#x5B58;&#x5728;&#x4E8E;&#x7D22;&#x5F15;&#x4E2D;&#x7684;&#x6587;&#x6863;&#x8BA1;&#x7B97;&#x8BCD;&#x9879;&#x5411;&#x91CF;&#xFF0C;&#x800C;&#x662F;&#x7531;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x504F;&#x79FB;&#x5047;&#x5B9A;&#x4F7F;&#x7528;UTF-16&#x7F16;&#x7801;&#x3002; &#x5982;&#x679C;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x504F;&#x79FB;&#x91CF;&#x6765;&#x83B7;&#x53D6;&#x751F;&#x6210;&#x6B64;&#x6807;&#x8BB0;&#x7684;&#x539F;&#x59CB;&#x6587;&#x672C;&#xFF0C;&#x5219;&#x5E94;&#x786E;&#x4FDD;&#x4F7F;&#x7528;UTF-16&#x7F16;&#x7801;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4E5F;&#x662F;&#x4F7F;&#x7528;UTF-16&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x7684;&#x3002;</p>
+<h4 id="&#x8BCD;&#x9879;&#x7EDF;&#x8BA1;&#xFF08;term-statistics&#xFF09;">&#x8BCD;&#x9879;&#x7EDF;&#x8BA1;&#xFF08;<em>term statistics</em>&#xFF09;</h4>
+<p>&#x8BBE;&#x7F6E;term_statistics&#x4E3A;true(&#x9ED8;&#x8BA4;&#x4E3A;false)&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;&#xFF1A;</p>
+<ul>
+<li>&#x603B;&#x8BCD;&#x9879;&#x9891;&#x7387;&#xFF08;&#x8BCD;&#x9879;&#x5728;&#x6240;&#x6709;&#x6587;&#x6863;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x9891;&#x7387;&#xFF09;</li>
+<li>&#x6587;&#x4EF6;&#x9891;&#x7387;&#xFF08;&#x5305;&#x542B;&#x5F53;&#x524D;&#x8BCD;&#x9879;&#x7684;&#x6587;&#x4EF6;&#x6570;&#xFF09;</li>
+</ul>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x4F1A;&#x8FD4;&#x56DE;&#x8FD9;&#x4E9B;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x8BCD;&#x9879;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x4F1A;&#x5BF9;&#x6027;&#x80FD;&#x4EA7;&#x751F;&#x4E25;&#x91CD;&#x5F71;&#x54CD;&#x3002;</p>
+<h4 id="&#x5B57;&#x6BB5;&#x7EDF;&#x8BA1;&#xFF08;field-statistics&#xFF09;">&#x5B57;&#x6BB5;&#x7EDF;&#x8BA1;&#xFF08;<em>field statistics</em>&#xFF09;</h4>
+<p>&#x5C06;<code>field_statistics</code>&#x8BBE;&#x7F6E;&#x4E3A;<code>false</code>&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;true&#xFF09;&#x5C06;&#x7701;&#x7565;&#xFF1A;</p>
+<ul>
+<li>&#x6587;&#x6863;&#x8BA1;&#x6570;&#xFF08;&#x5305;&#x542B;&#x6B64;&#x5B57;&#x6BB5;&#x7684;&#x6587;&#x6863;&#x6570;&#xFF09;</li>
+<li>&#x6587;&#x4EF6;&#x9891;&#x7387;&#x4E4B;&#x548C;&#xFF08;&#x8BE5;&#x5B57;&#x6BB5;&#x4E2D;&#x6240;&#x6709;&#x8BCD;&#x9879;&#x7684;&#x6587;&#x4EF6;&#x9891;&#x7387;&#x4E4B;&#x548C;&#xFF09;</li>
+<li>&#x603B;&#x8BCD;&#x9879;&#x9891;&#x7387;&#x4E4B;&#x548C;&#xFF08;&#x8BE5;&#x5B57;&#x6BB5;&#x4E2D;&#x6BCF;&#x4E2A;&#x8BCD;&#x9879;&#x7684;&#x603B;&#x8BCD;&#x9879;&#x9891;&#x7387;&#x4E4B;&#x548C;&#xFF09;</li>
+</ul>
+<h4 id="&#x8BCD;&#x9879;&#x8FC7;&#x6EE4;">&#x8BCD;&#x9879;&#x8FC7;&#x6EE4;</h4>
+<p>&#x4F7F;&#x7528;&#x53C2;&#x6570;<code>filter</code>&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5176;tf-idf&#x5206;&#x6570;&#x8FC7;&#x6EE4;&#x8FD4;&#x56DE;&#x8BCD;&#x9879;&#x3002; &#x8FD9;&#x5BF9;&#x4E8E;&#x627E;&#x51FA;&#x6587;&#x6863;&#x7684;&#x826F;&#x597D;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x53EF;&#x80FD;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002; &#x6B64;&#x529F;&#x80FD;&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x4E0E;&#x201C;&#x66F4;&#x559C;&#x6B22;&#x6B64;&#x67E5;&#x8BE2;&#x201D;&#x7684;&#x7B2C;&#x4E8C;&#x9636;&#x6BB5;&#x7C7B;&#x4F3C;&#xFF08;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-mlt-query.html#mlt-query-term-selection" target="_blank">second phase</a> of the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-mlt-query.html" target="_blank">More Like This Query</a>&#xFF09;&#x3002; &#x6709;&#x5173;&#x7528;&#x6CD5;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x793A;&#x4F8B;5&#x3002;</p>
+<p>&#x81EA;&#x6301;&#x4E0B;&#x5217;&#x5B50;&#x53C2;&#x6570;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><code>max_num_terms</code></th>
+<th style="text-align:left">&#x6BCF;&#x4E2A;&#x5B57;&#x6BB5;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x7684;&#x6700;&#x5927;&#x8BCD;&#x9879;&#x6570;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;25&#x3002;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>min_term_freq</code></td>
+<td style="text-align:left">&#x5FFD;&#x7565;&#x6E90;&#x6587;&#x6863;&#x4E2D;&#x9891;&#x7387;&#x4F4E;&#x4E8E;&#x6B64;&#x9891;&#x7387;&#x7684;&#x5355;&#x8BCD;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;1&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>max_term_freq</code></td>
+<td style="text-align:left">&#x5FFD;&#x7565;&#x6E90;&#x6587;&#x6863;&#x4E2D;&#x8D85;&#x8FC7;&#x6B64;&#x9891;&#x7387;&#x7684;&#x5355;&#x8BCD;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;&#x65E0;&#x9650;&#x5236;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>min_doc_freq</code></td>
+<td style="text-align:left">&#x5FFD;&#x7565;&#x81F3;&#x5C11;&#x5728;&#x8FD9;&#x4E48;&#x591A;&#x6587;&#x6863;&#x4E2D;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#x7684;&#x672F;&#x8BED;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;1&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>max_doc_freq</code></td>
+<td style="text-align:left">&#x5FFD;&#x7565;&#x8D85;&#x8FC7;&#x8FD9;&#x4E48;&#x591A;&#x6587;&#x6863;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x5355;&#x8BCD;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;&#x65E0;&#x9650;&#x5236;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>min_word_length</code></td>
+<td style="text-align:left">&#x6700;&#x5C0F;&#x5B57;&#x957F;&#xFF0C;&#x4F4E;&#x4E8E;&#x8BE5;&#x5B57;&#x957F;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;0&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>max_word_length</code></td>
+<td style="text-align:left">&#x6700;&#x5927;&#x5B57;&#x957F;&#xFF0C;&#x9AD8;&#x4E8E;&#x8BE5;&#x5B57;&#x957F;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;&#x65E0;&#x754C;&#xFF08;0&#xFF09;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x8868;&#x73B0;">&#x8868;&#x73B0;</h3>
+<p>&#x8BCD;&#x9879;&#x548C;&#x5B57;&#x6BB5;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x4E0D;&#x51C6;&#x786E;&#x3002;&#x5220;&#x9664;&#x7684;&#x6587;&#x6863;&#x4E0D;&#x4F1A;&#x88AB;&#x8003;&#x8651;&#x5728;&#x5185;&#x3002; &#x4EC5;&#x4E3A;&#x8BF7;&#x6C42;&#x7684;&#x6587;&#x6863;&#x6240;&#x5728;&#x7684;&#x5206;&#x7247;&#x68C0;&#x7D22;&#x4FE1;&#x606F;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x672F;&#x8BED;&#x548C;&#x5B57;&#x6BB5;&#x7EDF;&#x8BA1;&#x4EC5;&#x7528;&#x4F5C;&#x76F8;&#x5BF9;&#x5EA6;&#x91CF;&#xFF0C;&#x800C;&#x7EDD;&#x5BF9;&#x6570;&#x91CF;&#x5728;&#x6B64;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x8BF7;&#x6C42;&#x4EBA;&#x5DE5;&#x6587;&#x6863;&#x7684;&#x672F;&#x8BED;&#x5411;&#x91CF;&#x65F6;&#xFF0C;&#x968F;&#x673A;&#x9009;&#x62E9;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x7684;&#x5206;&#x7247;&#x3002; &#x4EC5;&#x4F7F;&#x7528;&#x8DEF;&#x7531;&#x6765;&#x547D;&#x4E2D;&#x7279;&#x5B9A;&#x7684;&#x5206;&#x7247;&#x3002;</p>
+<h4 id="&#x4F8B;&#x5B50;&#xFF1A;&#x8FD4;&#x56DE;stored&#x8BCD;&#x9879;&#x5411;&#x91CF;">&#x4F8B;&#x5B50;&#xFF1A;&#x8FD4;&#x56DE;stored&#x8BCD;&#x9879;&#x5411;&#x91CF;</h4>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x8BCD;&#x9879;&#x5411;&#x91CF;&#xFF0C;&#x6709;&#x6548;&#x8D1F;&#x8F7D;&#x7B49;&#x7684;&#x7D22;&#x5F15;&#xFF1A;</p>
+<pre><code>PUT /twitter/
+{ &quot;mappings&quot;: {
+    &quot;_doc&quot;: {
+      &quot;properties&quot;: {
+        &quot;text&quot;: {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;term_vector&quot;: &quot;with_positions_offsets_payloads&quot;,
+          &quot;store&quot; : true,
+          &quot;analyzer&quot; : &quot;fulltext_analyzer&quot;
+         },
+         &quot;fullname&quot;: {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;term_vector&quot;: &quot;with_positions_offsets_payloads&quot;,
+          &quot;analyzer&quot; : &quot;fulltext_analyzer&quot;
+        }
+      }
+    }
+  },
+  &quot;settings&quot; : {
+    &quot;index&quot; : {
+      &quot;number_of_shards&quot; : 1,
+      &quot;number_of_replicas&quot; : 0
+    },
+    &quot;analysis&quot;: {
+      &quot;analyzer&quot;: {
+        &quot;fulltext_analyzer&quot;: {
+          &quot;type&quot;: &quot;custom&quot;,
+          &quot;tokenizer&quot;: &quot;whitespace&quot;,
+          &quot;filter&quot;: [
+            &quot;lowercase&quot;,
+            &quot;type_as_payload&quot;
+          ]
+        }
+      }
+    }
+  }
+}
+</code></pre><p>&#x5176;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x4E00;&#x4E9B;&#x6587;&#x6863;&#xFF1A;</p>
+<pre><code>PUT /twitter/_doc/1
+{
+  &quot;fullname&quot; : &quot;John Doe&quot;,
+  &quot;text&quot; : &quot;twitter test test test &quot;
+}
+
+PUT /twitter/_doc/2
+{
+  &quot;fullname&quot; : &quot;Jane Doe&quot;,
+  &quot;text&quot; : &quot;Another twitter test ...&quot;
+}
+</code></pre><p>&#x4EE5;&#x4E0B;&#x8BF7;&#x6C42;&#x5C06;&#x8FD4;&#x56DE;&#x6587;&#x6863;1&#xFF08;John Doe&#xFF09;&#x4E2D;&#x5B57;&#x6BB5;&#x6587;&#x672C;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x548C;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code>GET /twitter/_doc/1/_termvectors
+{
+  &quot;fields&quot; : [&quot;text&quot;],
+  &quot;offsets&quot; : true,
+  &quot;payloads&quot; : true,
+  &quot;positions&quot; : true,
+  &quot;term_statistics&quot; : true,
+  &quot;field_statistics&quot; : true
+}
+</code></pre><p>&#x8FD4;&#x56DE;&#xFF1A;</p>
+<pre><code>{
+    &quot;_id&quot;: &quot;1&quot;,
+    &quot;_index&quot;: &quot;twitter&quot;,
+    &quot;_type&quot;: &quot;_doc&quot;,
+    &quot;_version&quot;: 1,
+    &quot;found&quot;: true,
+    &quot;took&quot;: 6,
+    &quot;term_vectors&quot;: {
+        &quot;text&quot;: {
+            &quot;field_statistics&quot;: {
+                &quot;doc_count&quot;: 2,
+                &quot;sum_doc_freq&quot;: 6,
+                &quot;sum_ttf&quot;: 8
+            },
+            &quot;terms&quot;: {
+                &quot;test&quot;: {
+                    &quot;doc_freq&quot;: 2,
+                    &quot;term_freq&quot;: 3,
+                    &quot;tokens&quot;: [
+                        {
+                            &quot;end_offset&quot;: 12,
+                            &quot;payload&quot;: &quot;d29yZA==&quot;,
+                            &quot;position&quot;: 1,
+                            &quot;start_offset&quot;: 8
+                        },
+                        {
+                            &quot;end_offset&quot;: 17,
+                            &quot;payload&quot;: &quot;d29yZA==&quot;,
+                            &quot;position&quot;: 2,
+                            &quot;start_offset&quot;: 13
+                        },
+                        {
+                            &quot;end_offset&quot;: 22,
+                            &quot;payload&quot;: &quot;d29yZA==&quot;,
+                            &quot;position&quot;: 3,
+                            &quot;start_offset&quot;: 18
+                        }
+                    ],
+                    &quot;ttf&quot;: 4
+                },
+                &quot;twitter&quot;: {
+                    &quot;doc_freq&quot;: 2,
+                    &quot;term_freq&quot;: 1,
+                    &quot;tokens&quot;: [
+                        {
+                            &quot;end_offset&quot;: 7,
+                            &quot;payload&quot;: &quot;d29yZA==&quot;,
+                            &quot;position&quot;: 0,
+                            &quot;start_offset&quot;: 0
+                        }
+                    ],
+                    &quot;ttf&quot;: 2
+                }
+            }
+        }
+    }
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="reindex-api.html" class="navigation navigation-prev " aria-label="Previous page: Reindex API">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="multi-termverctors-api.html" class="navigation navigation-next " aria-label="Next page: Multi termvectors API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Term Vectors","level":"1.4.11","depth":2,"next":{"title":"Multi termvectors API","level":"1.4.12","depth":2,"path":"document-api/multi-termverctors-api.md","ref":"document-api/multi-termverctors-api.md","articles":[]},"previous":{"title":"Reindex API","level":"1.4.10","depth":2,"path":"document-api/reindex-api.md","ref":"document-api/reindex-api.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"document-api/term-vectors.md","mtime":"2020-12-07T02:53:36.702Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-07T09:01:34.591Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

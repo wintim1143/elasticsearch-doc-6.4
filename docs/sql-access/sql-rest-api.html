@@ -1,0 +1,1380 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>SQL REST API · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="sql-translate-api.html" />
+    
+    
+    <link rel="prev" href="security.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting-started/">
+            
+                <a href="../getting-started/">
+            
+                    
+                    入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../getting-started/basic-concept.html">
+            
+                <a href="../getting-started/basic-concept.html">
+            
+                    
+                    基础概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../getting-started/installation.html">
+            
+                <a href="../getting-started/installation.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../getting-started/exploring-your-cluster/exploring-your-cluster.html">
+            
+                <a href="../getting-started/exploring-your-cluster/exploring-your-cluster.html">
+            
+                    
+                    集群探索
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../set-up-elasticsearc/">
+            
+                <a href="../set-up-elasticsearc/">
+            
+                    
+                    建立ELASTICSEARCH
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../set-up-elasticsearc/x-pack-setting/">
+            
+                <a href="../set-up-elasticsearc/x-pack-setting/">
+            
+                    
+                    X-PACK设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../set-up-elasticsearc/x-pack-setting/sql-access-setting.html">
+            
+                <a href="../set-up-elasticsearc/x-pack-setting/sql-access-setting.html">
+            
+                    
+                    SQL访问设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../document-api/">
+            
+                <a href="../document-api/">
+            
+                    
+                    文档API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../document-api/reading-and-writing-documents.html">
+            
+                <a href="../document-api/reading-and-writing-documents.html">
+            
+                    
+                    读取和写入文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../document-api/index-api.html">
+            
+                <a href="../document-api/index-api.html">
+            
+                    
+                    索引API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../document-api/get-api.html">
+            
+                <a href="../document-api/get-api.html">
+            
+                    
+                    GET API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../document-api/delete-api.html">
+            
+                <a href="../document-api/delete-api.html">
+            
+                    
+                    DELETE API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../document-api/delete-by-query-api.html">
+            
+                <a href="../document-api/delete-by-query-api.html">
+            
+                    
+                    Delete by Query API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../document-api/update-api.html">
+            
+                <a href="../document-api/update-api.html">
+            
+                    
+                    Update API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../document-api/update-by-query-api.html">
+            
+                <a href="../document-api/update-by-query-api.html">
+            
+                    
+                    Update by Query API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../document-api/multi-get-api.html">
+            
+                <a href="../document-api/multi-get-api.html">
+            
+                    
+                    Multi GET API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../document-api/bulk-api.html">
+            
+                <a href="../document-api/bulk-api.html">
+            
+                    
+                    Bulk API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../document-api/reindex-api.html">
+            
+                <a href="../document-api/reindex-api.html">
+            
+                    
+                    Reindex API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../document-api/term-vectors.html">
+            
+                <a href="../document-api/term-vectors.html">
+            
+                    
+                    Term Vectors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../document-api/multi-termverctors-api.html">
+            
+                <a href="../document-api/multi-termverctors-api.html">
+            
+                    
+                    Multi termvectors API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../document-api/refresh.html">
+            
+                <a href="../document-api/refresh.html">
+            
+                    
+                    ？更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    SQL访问
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="getting-started-with-sql.html">
+            
+                <a href="getting-started-with-sql.html">
+            
+                    
+                    SQL入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="convertions-and-terminology/">
+            
+                <a href="convertions-and-terminology/">
+            
+                    
+                    公约和术语
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="convertions-and-terminology/Mapping-concepts-across-sql-and-elasticsearch.html">
+            
+                <a href="convertions-and-terminology/Mapping-concepts-across-sql-and-elasticsearch.html">
+            
+                    
+                    跨SQL和Elasticsearch映射概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="security.html">
+            
+                <a href="security.html">
+            
+                    
+                    安全性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.5" data-path="sql-rest-api.html">
+            
+                <a href="sql-rest-api.html">
+            
+                    
+                    SQL REST API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="sql-translate-api.html">
+            
+                <a href="sql-translate-api.html">
+            
+                    
+                    SQL 翻译API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="sql-cli.html">
+            
+                <a href="sql-cli.html">
+            
+                    
+                    SQL CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="sql-jdbc/">
+            
+                <a href="sql-jdbc/">
+            
+                    
+                    SQL JDBC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.8.1" data-path="sql-jdbc/api-usage.html">
+            
+                <a href="sql-jdbc/api-usage.html">
+            
+                    
+                    API用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="sql-language.html">
+            
+                <a href="sql-language.html">
+            
+                    
+                    SQL 语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="data-types.html">
+            
+                <a href="data-types.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="sql-commands/">
+            
+                <a href="sql-commands/">
+            
+                    
+                    SQL命令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.11.1" data-path="sql-commands/describe-tables.html">
+            
+                <a href="sql-commands/describe-tables.html">
+            
+                    
+                    describe table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11.2" data-path="sql-commands/select.html">
+            
+                <a href="sql-commands/select.html">
+            
+                    
+                    select
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11.3" data-path="sql-commands/show-columns.html">
+            
+                <a href="sql-commands/show-columns.html">
+            
+                    
+                    show columns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11.4" data-path="sql-commands/show-functions.html">
+            
+                <a href="sql-commands/show-functions.html">
+            
+                    
+                    show functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11.5" data-path="sql-commands/show-tables.html">
+            
+                <a href="sql-commands/show-tables.html">
+            
+                    
+                    show tables
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="functions-and-operators/">
+            
+                <a href="functions-and-operators/">
+            
+                    
+                    方程和运算
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.12.1" data-path="functions-and-operators/comparsion-operators.html">
+            
+                <a href="functions-and-operators/comparsion-operators.html">
+            
+                    
+                    比较运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.2" data-path="functions-and-operators/logical-operators.html">
+            
+                <a href="functions-and-operators/logical-operators.html">
+            
+                    
+                    逻辑运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.3" data-path="functions-and-operators/math-operators.html">
+            
+                <a href="functions-and-operators/math-operators.html">
+            
+                    
+                    数学运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.4" data-path="functions-and-operators/math-functions.html">
+            
+                <a href="functions-and-operators/math-functions.html">
+            
+                    
+                    数学方程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.5" data-path="functions-and-operators/date-and-time-functions.html">
+            
+                <a href="functions-and-operators/date-and-time-functions.html">
+            
+                    
+                    日期和时间方程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.6" data-path="functions-and-operators/aggregate-functions.html">
+            
+                <a href="functions-and-operators/aggregate-functions.html">
+            
+                    
+                    聚合方程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="reversed-keywords.html">
+            
+                <a href="reversed-keywords.html">
+            
+                    
+                    保留关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../x-pack-api/">
+            
+                <a href="../x-pack-api/">
+            
+                    
+                    X-PACK API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../x-pack-api/security-api/">
+            
+                <a href="../x-pack-api/security-api/">
+            
+                    
+                    安全API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../x-pack-api/security-api/create-or-update-application-privileges-API.html">
+            
+                <a href="../x-pack-api/security-api/create-or-update-application-privileges-API.html">
+            
+                    
+                    创建或修改应用权限api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../x-pack-api/security-api/authenticate-api.html">
+            
+                <a href="../x-pack-api/security-api/authenticate-api.html">
+            
+                    
+                    认证api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../x-pack-api/security-api/change-passwords-api.html">
+            
+                <a href="../x-pack-api/security-api/change-passwords-api.html">
+            
+                    
+                    修改密码api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../x-pack-api/security-api/clear-cache-api.html">
+            
+                <a href="../x-pack-api/security-api/clear-cache-api.html">
+            
+                    
+                    清除缓存api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="../x-pack-api/security-api/create-or-update-role-mapping-api.html">
+            
+                <a href="../x-pack-api/security-api/create-or-update-role-mapping-api.html">
+            
+                    
+                    创建或修改角色映射api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="../x-pack-api/security-api/clear-role-cache-api.html">
+            
+                <a href="../x-pack-api/security-api/clear-role-cache-api.html">
+            
+                    
+                    清除角色缓存api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.7" data-path="../x-pack-api/security-api/create-or-update-roles-api.html">
+            
+                <a href="../x-pack-api/security-api/create-or-update-roles-api.html">
+            
+                    
+                    创建或修改角色api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.8" data-path="../x-pack-api/security-api/create-or-update-user-api.html">
+            
+                <a href="../x-pack-api/security-api/create-or-update-user-api.html">
+            
+                    
+                    创建或修改用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.9" data-path="../x-pack-api/security-api/delete-applications-privileges-api.html">
+            
+                <a href="../x-pack-api/security-api/delete-applications-privileges-api.html">
+            
+                    
+                    删除应用程序权限api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.10" data-path="../x-pack-api/security-api/delete-role-mapping-api.html">
+            
+                <a href="../x-pack-api/security-api/delete-role-mapping-api.html">
+            
+                    
+                    删除角色映射api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.11" data-path="../x-pack-api/security-api/delte-roles-api.html">
+            
+                <a href="../x-pack-api/security-api/delte-roles-api.html">
+            
+                    
+                    删除角色api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.12" data-path="../x-pack-api/security-api/delelte-token-api.html">
+            
+                <a href="../x-pack-api/security-api/delelte-token-api.html">
+            
+                    
+                    删除令牌api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.13" data-path="../x-pack-api/security-api/delete-user-api.html">
+            
+                <a href="../x-pack-api/security-api/delete-user-api.html">
+            
+                    
+                    删除用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.14" data-path="../x-pack-api/security-api/disable-user-api.html">
+            
+                <a href="../x-pack-api/security-api/disable-user-api.html">
+            
+                    
+                    禁用用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.15" data-path="../x-pack-api/security-api/enable-user-api.html">
+            
+                <a href="../x-pack-api/security-api/enable-user-api.html">
+            
+                    
+                    启用用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.16" data-path="../x-pack-api/security-api/get-application-privelges-api.html">
+            
+                <a href="../x-pack-api/security-api/get-application-privelges-api.html">
+            
+                    
+                    获取应用程序权限api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.17" data-path="../x-pack-api/security-api/get-roles-mapping-api.html">
+            
+                <a href="../x-pack-api/security-api/get-roles-mapping-api.html">
+            
+                    
+                    获取角色映射api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.18" data-path="../x-pack-api/security-api/get-roles-api.html">
+            
+                <a href="../x-pack-api/security-api/get-roles-api.html">
+            
+                    
+                    获取角色api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.19" data-path="../x-pack-api/security-api/get-token-api.html">
+            
+                <a href="../x-pack-api/security-api/get-token-api.html">
+            
+                    
+                    获取令牌api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.20" data-path="../x-pack-api/security-api/get-users-api.html">
+            
+                <a href="../x-pack-api/security-api/get-users-api.html">
+            
+                    
+                    获取用户api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.21" data-path="../x-pack-api/security-api/has-privileges-api.html">
+            
+                <a href="../x-pack-api/security-api/has-privileges-api.html">
+            
+                    
+                    是否有权限api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.22" data-path="../x-pack-api/security-api/ssl-certificate-api.html">
+            
+                <a href="../x-pack-api/security-api/ssl-certificate-api.html">
+            
+                    
+                    ssl证书api
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../expamle/">
+            
+                <a href="../expamle/">
+            
+                    
+                    示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../expamle/create-index.html">
+            
+                <a href="../expamle/create-index.html">
+            
+                    
+                    创建索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../expamle/create-role.html">
+            
+                <a href="../expamle/create-role.html">
+            
+                    
+                    创建角色
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../expamle/create-user.html">
+            
+                <a href="../expamle/create-user.html">
+            
+                    
+                    创建用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >SQL REST API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sql-rest-api">SQL REST API</h1>
+<p>SQL REST API&#x63A5;&#x53D7;JSON&#x6587;&#x6863;&#x4E2D;&#x7684;SQL&#xFF0C;&#x6267;&#x884C;&#x5B83;&#x5E76;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x3002; &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>POST /_xpack/sql?format=txt
+{
+    &quot;query&quot;: &quot;SELECT * FROM library ORDER BY page_count DESC LIMIT 5&quot;
+}
+</code></pre><p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code>     author      |        name        |  page_count   | release_date
+-----------------+--------------------+---------------+------------------------
+Peter F. Hamilton|Pandora&apos;s Star      |768            |2004-03-02T00:00:00.000Z
+Vernor Vinge     |A Fire Upon the Deep|613            |1992-06-01T00:00:00.000Z
+Frank Herbert    |Dune                |604            |1965-06-01T00:00:00.000Z
+Alastair Reynolds|Revelation Space    |585            |2000-03-15T00:00:00.000Z
+James S.A. Corey |Leviathan Wakes     |561            |2011-06-02T00:00:00.000Z
+</code></pre><p>&#x867D;&#x7136;text / plain&#x683C;&#x5F0F;&#x5BF9;&#x4EBA;&#x7C7B;&#x6765;&#x8BF4;&#x5F88;&#x597D;&#xFF0C;&#x4F46;&#x8BA1;&#x7B97;&#x673A;&#x66F4;&#x559C;&#x6B22;&#x66F4;&#x6709;&#x7ED3;&#x6784;&#x7684;&#x4E1C;&#x897F;&#x3002; &#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x683C;&#x5F0F;&#x66FF;&#x6362;&#x683C;&#x5F0F;&#x7684;&#x503C;&#xFF1A;</p>
+<pre><code>-json &#x53C8;&#x540D; application/json 
+-yaml &#x53C8;&#x540D; application/yaml 
+-smile &#x53C8;&#x540D; application/smile 
+-cbor &#x53C8;&#x540D; application/cbor 
+-txt &#x53C8;&#x540D; text/plain 
+-csv &#x53C8;&#x540D; text/csv 
+-tsv &#x53C8;&#x540D; text/tab-separated-values
+</code></pre><p>&#x6216;&#x8005;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;Accept HTTP&#x6807;&#x5934;&#x8BBE;&#x7F6E;&#x4E3A;&#x9002;&#x5F53;&#x7684;&#x5A92;&#x4F53;&#x683C;&#x5F0F;(appropriate media format)&#x3002; GET&#x53C2;&#x6570;&#x4F18;&#x5148;&#x4E8E;&#x6807;&#x5934;&#x3002; &#x5982;&#x679C;&#x4E24;&#x8005;&#x90FD;&#x672A;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x4EE5;&#x4E0E;&#x8BF7;&#x6C42;&#x76F8;&#x540C;&#x7684;&#x683C;&#x5F0F;&#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x3002;</p>
+<pre><code>POST /_xpack/sql?format=json
+{
+    &quot;query&quot;: &quot;SELECT * FROM library ORDER BY page_count DESC&quot;,
+    &quot;fetch_size&quot;: 5
+}
+</code></pre><p>&#x8FD4;&#x56DE;&#xFF1A;</p>
+<pre><code>{
+    &quot;columns&quot;: [
+        {&quot;name&quot;: &quot;author&quot;,       &quot;type&quot;: &quot;text&quot;},
+        {&quot;name&quot;: &quot;name&quot;,         &quot;type&quot;: &quot;text&quot;},
+        {&quot;name&quot;: &quot;page_count&quot;,   &quot;type&quot;: &quot;short&quot;},
+        {&quot;name&quot;: &quot;release_date&quot;, &quot;type&quot;: &quot;date&quot;}
+    ],
+    &quot;rows&quot;: [
+        [&quot;Peter F. Hamilton&quot;,  &quot;Pandora&apos;s Star&quot;,       768, &quot;2004-03-02T00:00:00.000Z&quot;],
+        [&quot;Vernor Vinge&quot;,       &quot;A Fire Upon the Deep&quot;, 613, &quot;1992-06-01T00:00:00.000Z&quot;],
+        [&quot;Frank Herbert&quot;,      &quot;Dune&quot;,                 604, &quot;1965-06-01T00:00:00.000Z&quot;],
+        [&quot;Alastair Reynolds&quot;,  &quot;Revelation Space&quot;,     585, &quot;2000-03-15T00:00:00.000Z&quot;],
+        [&quot;James S.A. Corey&quot;,   &quot;Leviathan Wakes&quot;,      561, &quot;2011-06-02T00:00:00.000Z&quot;]
+    ],
+    &quot;cursor&quot;: &quot;sDXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAAEWWWdrRlVfSS1TbDYtcW9lc1FJNmlYdw==:BAFmBmF1dGhvcgFmBG5hbWUBZgpwYWdlX2NvdW50AWYMcmVsZWFzZV9kYXRl+v///w8=&quot;
+}
+</code></pre><p>&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53D1;&#x56DE;&#x5149;&#x6807;&#x5B57;&#x6BB5;&#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x9875;&#x3002; &#x5728;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5149;&#x6807;&#x4F5C;&#x4E3A;Cursor http&#x6807;&#x5934;&#x8FD4;&#x56DE;&#x3002;</p>
+<pre><code>POST /_xpack/sql?format=json
+{
+    &quot;cursor&quot;: &quot;sDXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAAEWYUpOYklQMHhRUEtld3RsNnFtYU1hQQ==:BAFmBGRhdGUBZgVsaWtlcwFzB21lc3NhZ2UBZgR1c2Vy9f///w8=&quot;
+}
+</code></pre><p>&#x53EF;&#x80FD;&#x8FD4;&#x56DE;&#xFF1A;</p>
+<pre><code>{
+    &quot;rows&quot; : [
+        [&quot;Dan Simmons&quot;,        &quot;Hyperion&quot;,             482,  &quot;1989-05-26T00:00:00.000Z&quot;],
+        [&quot;Iain M. Banks&quot;,      &quot;Consider Phlebas&quot;,     471,  &quot;1987-04-23T00:00:00.000Z&quot;],
+        [&quot;Neal Stephenson&quot;,    &quot;Snow Crash&quot;,           470,  &quot;1992-06-01T00:00:00.000Z&quot;],
+        [&quot;Frank Herbert&quot;,      &quot;God Emperor of Dune&quot;,  454,  &quot;1981-05-28T00:00:00.000Z&quot;],
+        [&quot;Frank Herbert&quot;,      &quot;Children of Dune&quot;,     408,  &quot;1976-04-21T00:00:00.000Z&quot;]
+    ],
+    &quot;cursor&quot; : &quot;sDXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAAEWODRMaXBUaVlRN21iTlRyWHZWYUdrdw==:BAFmBmF1dGhvcgFmBG5hbWUBZgpwYWdlX2NvdW50AWYMcmVsZWFzZV9kYXRl9f///w8=&quot;
+}
+</code></pre><p>&#x6CE8;&#x610F; <code>column</code>&#x5BF9;&#x8C61;&#x53EA;&#x5728;&#x7B2C;&#x4E00;&#x9875;&#x4E2D;&#x5C55;&#x793A;&#x3002;</p>
+<p>&#x5F53;&#x7ED3;&#x679C;&#x4E2D;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x5149;&#x6807;&#x65F6;&#xFF0C;&#x60A8;&#x5DF2;&#x5230;&#x8FBE;&#x6700;&#x540E;&#x4E00;&#x9875;&#x3002; &#x4E0E;Elasticsearch&#x7684;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-scroll.html" target="_blank"><code>scroll</code></a>&#x4E00;&#x6837;&#xFF0C;SQL&#x53EF;&#x4EE5;&#x5728;Elasticsearch&#x4E2D;&#x4FDD;&#x6301;&#x72B6;&#x6001;&#x4EE5;&#x652F;&#x6301;&#x6E38;&#x6807;&#x3002; &#x4E0E;<code>scroll</code>&#x4E0D;&#x540C;&#xFF0C;&#x63A5;&#x6536;&#x6700;&#x540E;&#x4E00;&#x9875;&#x8DB3;&#x4EE5;&#x4FDD;&#x8BC1;&#x6E05;&#x9664;Elasticsearch&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x8981;&#x63D0;&#x524D;&#x6E05;&#x9664;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;clear cursor&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>POST /_xpack/sql/close
+{
+    &quot;cursor&quot;: &quot;sDXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAAEWYUpOYklQMHhRUEtld3RsNnFtYU1hQQ==:BAFmBGRhdGUBZgVsaWtlcwFzB21lc3NhZ2UBZgR1c2Vy9f///w8=&quot;
+}
+</code></pre><p>&#x53EF;&#x80FD;&#x8FD4;&#x56DE;&#xFF1A;</p>
+<pre><code>{
+    &quot;succeeded&quot; : true
+}
+</code></pre><p>&#x53EF;&#x4EE5;&#x5728;&#x6807;&#x51C6;&#x7684;Elasticsearch query DSL&#x4E2D;&#x8FD0;&#x884C;SQL,&#x5E76;&#x901A;&#x8FC7;&#x6307;&#x5B9A; filter &#x53C2;&#x6570;&#x6765;&#x8FC7;&#x6EE4;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code>POST /_xpack/sql?format=txt
+{
+    &quot;query&quot;: &quot;SELECT * FROM library ORDER BY page_count DESC&quot;,
+    &quot;filter&quot;: {
+        &quot;range&quot;: {
+            &quot;page_count&quot;: {
+                &quot;gte&quot; : 100,
+                &quot;lte&quot; : 200
+            }
+        }
+    },
+    &quot;fetch_size&quot;: 5
+}
+</code></pre><p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code>  author     |                name                |  page_count   | release_date
+---------------+------------------------------------+---------------+------------------------
+Douglas Adams  |The Hitchhiker&apos;s Guide to the Galaxy|180            |1979-10-12T00:00:00.000Z
+</code></pre><p>&#x9664;&#x4E86;<code>query</code>&#x548C;<code>cursor</code>&#x5B57;&#x6BB5;&#x4E4B;&#x5916;&#xFF0C;&#x8BF7;&#x6C42;&#x8FD8;&#x53EF;&#x4EE5;&#x5305;&#x542B;<code>fetch_size</code>&#x548C;<code>time_zone</code>&#x3002; <code>fetch_size</code>&#x662F;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x8FD4;&#x56DE;&#x591A;&#x5C11;&#x7ED3;&#x679C;&#x7684;&#x63D0;&#x793A;&#x3002; SQL&#x53EF;&#x80FD;&#x4F1A;&#x9009;&#x62E9;&#x8FD4;&#x56DE;&#x66F4;&#x591A;&#x6216;&#x66F4;&#x5C11;&#x7684;&#x7ED3;&#x679C;&#x3002; <code>time_zone</code>&#x662F;&#x7528;&#x4E8E;&#x65E5;&#x671F;&#x51FD;&#x6570;&#x548C;&#x65E5;&#x671F;&#x89E3;&#x6790;&#x7684;&#x65F6;&#x533A;&#x3002; <code>time_zone</code>&#x9ED8;&#x8BA4;&#x4E3A;<code>utc</code>&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528;<a href="http://www.joda.org/joda-time/apidocs/org/joda/time/DateTimeZone.html" target="_blank">&#x6B64;&#x5904;</a>&#x8BB0;&#x5F55;&#x7684;&#x4EFB;&#x4F55;&#x503C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="security.html" class="navigation navigation-prev " aria-label="Previous page: 安全性">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="sql-translate-api.html" class="navigation navigation-next " aria-label="Next page: SQL 翻译API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SQL REST API","level":"1.5.5","depth":2,"next":{"title":"SQL 翻译API","level":"1.5.6","depth":2,"path":"sql-access/sql-translate-api.md","ref":"sql-access/sql-translate-api.md","articles":[]},"previous":{"title":"安全性","level":"1.5.4","depth":2,"path":"sql-access/security.md","ref":"sql-access/security.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sql-access/sql-rest-api.md","mtime":"2020-12-07T02:53:36.719Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-07T09:01:34.591Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
